@@ -1,10 +1,14 @@
 class Animal:
-    pass
+    count = 0
 
-pochi = Animal()
-tama = Animal()
-print(type(pochi))
-print(type(tama))
+    def __init__(self, kind, age):
+        self.kind = kind
+        self.age = age
+        Animal.count += 1
 
-print(pochi == tama)
-print(pochi is tama)
+
+pochi = Animal("犬", 5)
+tama = Animal("猫", 3)
+print(pochi.kind, pochi.age)
+print(tama.kind, tama.age)
+print(Animal.count)
